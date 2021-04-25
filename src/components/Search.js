@@ -5,9 +5,10 @@ class Search extends React.Component {
         return (
             <div>
                 <form className="form-inline justify-content-center">
-                <input type="text" placeholder="Search" className="form-control">
-                </input>
+                    <input type="text" placeholder="Search" className="form-control">
+                    </input>
                 </form>
+                <br></br>
             </div>
         )
     }

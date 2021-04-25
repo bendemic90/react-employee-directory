@@ -4,9 +4,9 @@ import API from '../utils/API'
 class EmployeeTable extends React.Component {
     state = {
         employees: [],
-        count: 1
+        count: 0
     }
-
+    
     componentDidMount() {
         API.getEmployees()
             .then(res => this.setState({ employees: res.data.results }))
@@ -16,7 +16,7 @@ class EmployeeTable extends React.Component {
     render() {
         return (
             <div>
-            <table className="table">
+            <table className="table table-striped">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
@@ -29,14 +29,12 @@ class EmployeeTable extends React.Component {
                     {this.state.employees.map(employee => {
                         return (
                             <tr key={employee.login.salt}>
-                            <th scope="row">{this.state.count}</th>
+                            <th scope="row">#</th>
                             <td>{employee.name.first}</td>
                             <td>{employee.name.last}</td>
                             <td>{employee.email}</td>
                             </tr>
-                            
                         )
-                        
                     })}
                 </tbody>
             </table>
