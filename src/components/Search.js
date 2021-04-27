@@ -25,14 +25,14 @@ class Search extends React.Component {
                     onSubmit={this.handleFormSubmit}
                     onChange={this.handleInputChange}
                     className="form-inline justify-content-center">
-                    <input 
-                        type="text"
-                        name="searchString"
-                        value={this.state.searchString} 
-                        placeholder="Search" 
-                        className="form-control"
-                        onChange={this.handleInputChange}
-                        onSubmit={this.handleFormSubmit}
+                        <input 
+                            type="text"
+                            name="searchString"
+                            value={this.state.searchString} 
+                            placeholder="Search" 
+                            className="form-control"
+                            onChange={this.handleInputChange}
+                            onSubmit={this.handleFormSubmit}
                         />
                 </form>
                 <br></br>
