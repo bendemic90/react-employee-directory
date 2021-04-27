@@ -29,7 +29,7 @@ class EmployeeTable extends React.Component {
                     {this.state.employees.map(employee => {
                         return (
                             <tr key={employee.login.salt}>
-                            <th scope="row">#</th>
+                            <th scope="row">{this.state.employees.indexOf(employee) + 1}</th>
                             <td>{employee.name.first}</td>
                             <td>{employee.name.last}</td>
                             <td>{employee.email}</td>
