@@ -1,44 +1,36 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
 
-class Search extends React.Component {
-    state = {
-        searchString: "",
-    };
+function Search() {
+  const [searchString, setString] = useState("");
 
-    handleInputChange = event => {
-        let value = event.target.value;
-        const name = event.target.name;
+  const handleInputChange = (event) => {
+    let value = event.target.value;
+    setString(value);
+  };
 
-        this.setState({
-            [name]: value
-        });
-    };
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+  };
 
-    handleFormSubmit = (event) => {
-        event.preventDefault();
-    };
-
-    render() {
-        return (
-            <div>
-                <form 
-                    onSubmit={this.handleFormSubmit}
-                    onChange={this.handleInputChange}
-                    className="form-inline justify-content-center">
-                        <input 
-                            type="text"
-                            name="searchString"
-                            value={this.state.searchString} 
-                            placeholder="Search" 
-                            className="form-control"
-                            onChange={this.handleInputChange}
-                            onSubmit={this.handleFormSubmit}
-                        />
-                </form>
-                <br></br>
-            </div>
-        )
-    }
-};
+  return (
+    <div>
+      <form
+        onSubmit={handleFormSubmit}
+        onChange={handleInputChange}
+        className="form-inline justify-content-center"
+      >
+        <input
+          type="text"
+          name="searchString"
+          value={searchString}
+          placeholder="Search"
+          className="form-control"
+          onChange={handleInputChange}
+        />
+      </form>
+      <br></br>
+    </div>
+  );
+}
 
 export default Search;

@@ -1,7 +1,6 @@
 import React from "react";
 
-class Jumbo extends React.Component {
-  render() {
+function Jumbo() {
     return (
       <div className="jumbotron">
         <h1>Employee Directory</h1>
@@ -9,6 +8,5 @@ class Jumbo extends React.Component {
       </div>
     );
   }
-}
 
 export default Jumbo;

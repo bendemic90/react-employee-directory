@@ -1,7 +1,6 @@
 import React from 'react'
 
-class Nav extends React.Component {
-    render() {
+function Nav() {
         return (
             <div>
                 <nav class="navbar navbar-light bg-light">
@@ -10,6 +9,5 @@ class Nav extends React.Component {
             </div>
         )
     }
-}
 
 export default Nav;
