@@ -9,6 +9,11 @@ import API from './utils/API'
 function App() {
 
   const [employees, setEmployees] = useState([]);
+  const [search, setSearch] = useState("")
+
+  const filterSearch = () => {
+    employees.filter(filteredEmployee => console.log(filteredEmployee))
+  }
 
   useEffect(() => {
     API.getEmployees()
@@ -20,7 +25,7 @@ function App() {
     <div className="App">
       <Nav />
       <Jumbo />
-      <Search employees={employees}/>
+      <Search />
       <EmployeeTable employees={employees} />
     </div>
   );

@@ -1,16 +1,8 @@
-import React, { useState, useEffect } from "react";
-//import EmployeeTable from './EmployeeTable'
+import React from "react";
 
-function Search() {
-  const [searchString, setString] = useState("");
-
-  useEffect(() => {
-
-  }, [searchString])
+function Search(props) {
 
   const handleInputChange = (event) => {
-    let value = event.target.value;
-    setString(value);
   };
 
   const handleFormSubmit = (event) => {
@@ -27,7 +19,7 @@ function Search() {
         <input
           type="text"
           name="searchString"
-          value={searchString}
+          value={props.search}
           placeholder="Search"
           className="form-control"
           onChange={handleInputChange}
