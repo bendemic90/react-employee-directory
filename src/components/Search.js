@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
+//import EmployeeTable from './EmployeeTable'
 
 function Search() {
   const [searchString, setString] = useState("");
+
+  useEffect(() => {
+
+  }, [searchString])
 
   const handleInputChange = (event) => {
     let value = event.target.value;

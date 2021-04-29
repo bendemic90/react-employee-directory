@@ -1,15 +1,7 @@
 import React, {useState, useEffect} from "react";
 import API from "../utils/API";
 
-function EmployeeTable() {
-
-  const [employees, setEmployees] = useState([])
-
-  useEffect(() => {
-    API.getEmployees()
-      .then((res) => setEmployees(res.data.results))
-      .catch((err) => console.log(err));
-  }, []);
+function EmployeeTable(props) {
 
     return (
       <div>
@@ -23,11 +15,11 @@ function EmployeeTable() {
             </tr>
           </thead>
           <tbody>
-            {employees.map((employee) => {
+            {props.employees.map((employee) => {
               return (
                 <tr key={employee.login.salt}>
                   <th scope="row">
-                    {employees.indexOf(employee) + 1}
+                    {props.employees.indexOf(employee) + 1}
                   </th>
                   <td>{employee.name.first}</td>
                   <td>{employee.name.last}</td>
