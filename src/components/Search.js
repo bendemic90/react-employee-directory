@@ -2,9 +2,6 @@ import React from "react";
 
 function Search(props) {
 
-  const handleInputChange = (event) => {
-  };
-
   const handleFormSubmit = (event) => {
     event.preventDefault();
   };
@@ -13,16 +10,15 @@ function Search(props) {
     <div>
       <form
         onSubmit={handleFormSubmit}
-        onChange={handleInputChange}
+        onChange={props.onChange}
         className="form-inline justify-content-center"
       >
         <input
           type="text"
-          name="searchString"
+          name="search"
           value={props.search}
           placeholder="Search"
           className="form-control"
-          onChange={handleInputChange}
         />
       </form>
       <br></br>
