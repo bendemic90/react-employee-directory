@@ -28,7 +28,8 @@ function App() {
 
   const onClick = (event) => {
     event.preventDefault()
-    employees.sort((a, b) => {
+    if (sort) {
+      employees.sort((a, b) => {
       if (a.name.first < b.name.first) {
         return -1
       }
@@ -37,6 +38,19 @@ function App() {
       }
       return 0
     })
+    }
+    else {
+      employees.sort((a, b) => {
+        if (a.name.first < b.name.first) {
+          return 1
+        }
+        if (a.name.first > b.name.first) {
+          return -1
+        }
+        return 0
+      })
+    }
+    
     setSort(!sort)
   }
 
