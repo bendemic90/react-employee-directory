@@ -10,6 +10,7 @@ function App() {
 
   const [employees, setEmployees] = useState([]);
   const [search, setSearch] = useState("")
+  const [sort, setSort] = useState(false)
 
   useEffect(() => {
     API.getEmployees()
@@ -36,6 +37,7 @@ function App() {
       }
       return 0
     })
+    setSort(!sort)
   }
 
   return (
