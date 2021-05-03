@@ -10,17 +10,12 @@ function App() {
 
   const [employees, setEmployees] = useState([]);
   const [search, setSearch] = useState("")
-  //const [filtered, setFilter] = useState([])
 
   useEffect(() => {
     API.getEmployees()
       .then((res) => setEmployees(res.data.results))
       .catch((err) => console.log(err));
   }, []);
-
-  // useEffect(() => {
-  //   console.log(employees.filter(employee => employee.name.first.toLowerCase().includes(search)))
-  // }, [search])
 
   const handleInputChange = (event) => {
     setSearch(event.target.value)

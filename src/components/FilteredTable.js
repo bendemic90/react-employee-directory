@@ -1,7 +1,6 @@
 import React from "react";
 
 function FilteredTable(props) {
-
   const filtered = props.employees.filter(
     (employee) =>
       employee.name.first.toLowerCase().includes(props.search) ||
@@ -10,21 +9,25 @@ function FilteredTable(props) {
 
   return (
     <>
-      {filtered.length > 0 ? 
+      {filtered.length > 0 ? (
         filtered.map((element) => {
           return (
             <tr key={filtered.indexOf(element)}>
-            <th scope="row">{filtered.indexOf(element) + 1}</th>
-            <td>{element.name.first}</td>
-            <td>{element.name.last}</td>
-            <td>{element.email}</td>
+              <th scope="row">{props.employees.indexOf(element) + 1}</th>
+              <td><img src={element.picture.thumbnail} alt="id"/></td>
+              <td>{element.name.first}</td>
+              <td>{element.name.last}</td>
+              <td>{element.email}</td>
             </tr>
-          )
+          );
         })
-       : (
+      ) : (
         <tr>
-          <th scope="row"></th>
+          <th scope="row">#</th>
+          <td></td>
           <td>No matches found</td>
+          <td></td>
+          <td></td>
         </tr>
       )}
     </>

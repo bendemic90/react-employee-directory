@@ -9,6 +9,7 @@ function EmployeeTable(props) {
         <thead>
           <tr>
             <th scope="col">ID</th>
+            <th scope="col">Pic</th>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
             <th scope="col">Email</th>
