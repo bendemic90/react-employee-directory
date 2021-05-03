@@ -17,16 +17,33 @@ function App() {
       .catch((err) => console.log(err));
   }, []);
 
+  useEffect(() => {
+    console.log(`employees has changed`)
+  }, [employees])
+
   const handleInputChange = (event) => {
     setSearch(event.target.value)
   };
+
+  const onClick = (event) => {
+    event.preventDefault()
+    employees.sort((a, b) => {
+      if (a.name.first < b.name.first) {
+        return -1
+      }
+      if (a.name.first > b.name.first) {
+        return 1
+      }
+      return 0
+    })
+  }
 
   return (
     <div className="App">
       <Nav />
       <Jumbo />
       <Search employees={employees} onChange={handleInputChange} search={search} />
-      <EmployeeTable employees={employees} onChange={handleInputChange} search={search}/>
+      <EmployeeTable employees={employees} onClick={onClick} onChange={handleInputChange} search={search}/>
     </div>
   );
 }
