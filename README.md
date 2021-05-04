@@ -20,4 +20,4 @@ This assignment was an exercise in handling data from an API and rendering it in
 [Repo](https://github.com/bendemic90/react-employee-directory)
 
 ## Link to deployed website
-[Heroku](https://bendemic90.github.io/react-employee-directory/)
+[GH-Pages](https://bendemic90.github.io/react-employee-directory/)

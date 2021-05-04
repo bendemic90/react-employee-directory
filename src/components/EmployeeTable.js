@@ -4,7 +4,8 @@ import FilteredTable from './FilteredTable'
 
 function EmployeeTable(props) {
 
-  useEffect(() => {}, [props.employees])
+  useEffect(() => {
+  }, [props.employees])
 
   return (
     <div>

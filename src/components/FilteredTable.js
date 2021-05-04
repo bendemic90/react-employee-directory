@@ -1,6 +1,7 @@
 import React from "react";
 
 function FilteredTable(props) {
+  
   const filtered = props.employees.filter(
     (employee) =>
       employee.name.first.toLowerCase().includes(props.search) ||

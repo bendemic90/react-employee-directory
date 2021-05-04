@@ -19,7 +19,6 @@ function App() {
   }, []);
 
   useEffect(() => {
-    console.log(`employees has changed`)
   }, [employees])
 
   const handleInputChange = (event) => {
@@ -50,7 +49,6 @@ function App() {
         return 0
       })
     }
-    
     setSort(!sort)
   }
 
